@@ -41,6 +41,20 @@ INSTALLED_APPS = [
     'contact'
 ]
 
+CSRF_TRUSTED_ORIGINS = [
+    "http://localhost:3000",
+    'http://localhost:8000',
+    'https://bank-management-frontend-three.vercel.app',
+    'https://portfolio-backend-5nv1.onrender.com'
+]
+
+CORS_ORIGIN_WHITELIST = [
+    "http://localhost:3000",
+    "http://localhost:8000",
+    'https://bank-management-frontend-three.vercel.app',
+    'https://portfolio-backend-5nv1.onrender.com'
+]
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
