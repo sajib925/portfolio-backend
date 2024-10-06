@@ -20,14 +20,18 @@ class PortfolioSerializer(serializers.ModelSerializer):
         fields = [
             'id',
             'title',
-            'description',
+            'description_1',
+            'description_2',
+            'description_3',
             'tags',
             'features',
-            'image',
+            'image_1',
+            'image_2',
+            'image_3',
             'live_link_frontend',
             'live_link_backend',
             'github_link_frontend',
-            'github_link_backend'
+            'github_link_backend',
         ]
 
     def create(self, validated_data):
@@ -56,8 +60,12 @@ class PortfolioSerializer(serializers.ModelSerializer):
 
         # Update basic fields
         instance.title = validated_data.get('title', instance.title)
-        instance.description = validated_data.get('description', instance.description)
-        instance.image = validated_data.get('image', instance.image)
+        instance.description_1 = validated_data.get('description_1', instance.description_1)
+        instance.description_2 = validated_data.get('description_2', instance.description_2)
+        instance.description_3 = validated_data.get('description_3', instance.description_3)
+        instance.image_1 = validated_data.get('image_1', instance.image_1)
+        instance.image_2 = validated_data.get('image_2', instance.image_2)
+        instance.image_3 = validated_data.get('image_3', instance.image_3)
         instance.live_link_frontend = validated_data.get('live_link_frontend', instance.live_link_frontend)
         instance.live_link_backend = validated_data.get('live_link_backend', instance.live_link_backend)
         instance.github_link_frontend = validated_data.get('github_link_frontend', instance.github_link_frontend)

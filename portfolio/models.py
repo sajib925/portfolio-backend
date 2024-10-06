@@ -12,7 +12,9 @@ class Features(models.Model):
         return self.name
 class Portfolio(models.Model):
     title = models.CharField(max_length=255)
-    description = models.TextField()
+    description_1 = models.TextField(null=True, blank=True)
+    description_2 = models.TextField(null=True, blank=True)
+    description_3 = models.TextField(null=True, blank=True)
     tags = models.ManyToManyField(Tag, related_name='portfolios')
     features = models.ManyToManyField(Features, related_name='portfolios')
     image_1 = models.CharField(max_length=255)
